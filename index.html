@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNA-Seq Analysis Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-section h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .form-section p {
+            font-size: 0.9em;
+            color: #555;
+            margin: 5px 0 10px 0;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>RNA-Seq Analysis Information Form</h1>
+    <p>Please complete the following form to provide all necessary details for your RNA-Seq analysis. For each section, examples or guidance are provided where applicable. Ensure you fill out as much information as possible for accurate and efficient processing.</p>
+
+    <form method="POST" action="https://formspree.io/f/xjkgkloq">
+        <!-- Project Contact Information -->
+        <div class="form-section">
+            <h3>Project Contact Information</h3>
+            <label for="contact-name">Contact Name:</label>
+            <input type="text" id="contact-name" name="contact-name" required>
+
+            <label for="contact-email">Contact Email:</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+        </div>
+
+        <!-- General Experiment Details -->
+        <div class="form-section">
+            <h3>General Experiment Details</h3>
+            <p><strong>Note:</strong> Provide information about the hypothesis and objectives to contextualize the experiment.</p>
+            <label for="hypothesis">Hypothesis/Research Question:</label>
+            <textarea id="hypothesis" name="hypothesis" rows="3" required></textarea>
+
+            <label for="objective">Objective:</label>
+            <textarea id="objective" name="objective" rows="3" required></textarea>
+
+            <label for="species">Species:</label>
+            <input type="text" id="species" name="species" required>
+
+            <label for="tissue">Tissue Type:</label>
+            <input type="text" id="tissue" name="tissue" required>
+
+            <label for="sample-metadata">Sample Metadata (e.g., age, sex, condition, treatment):</label>
+            <textarea id="sample-metadata" name="sample-metadata" rows="3" required></textarea>
+        </div>
+
+        <!-- Experiment Type -->
+        <div class="form-section">
+            <h3>Experiment Type</h3>
+            <p>Select the type of RNA sequencing being performed and provide relevant details.</p>
+            <label for="rna-type">Is this a bulk or single-cell RNA-Seq experiment?</label>
+            <select id="rna-type" name="rna-type" required>
+                <option value="bulk">Bulk RNA-Seq</option>
+                <option value="single-cell">Single-Cell RNA-Seq</option>
+            </select>
+        </div>
+
+        <!-- Experiment Design -->
+        <div class="form-section">
+            <h3>Experiment Design</h3>
+            <p><strong>Note:</strong> Provide detailed information about replicates, controls, and experimental conditions.</p>
+            <label for="num-samples">Number of Samples:</label>
+            <input type="number" id="num-samples" name="num-samples" required>
+
+            <label for="controls">Controls (e.g., untreated samples, reference conditions):</label>
+            <textarea id="controls" name="controls" rows="3" required></textarea>
+
+            <label for="conditions">Experimental Conditions:</label>
+            <textarea id="conditions" name="conditions" rows="3" required></textarea>
+
+            <label for="batch-info">Batch Information (e.g., batch IDs, processing dates):</label>
+            <textarea id="batch-info" name="batch-info" rows="3"></textarea>
+        </div>
+
+        <!-- Sequencing Platform and Technology -->
+        <div class="form-section">
+            <h3>Sequencing Platform and Technology</h3>
+            <label for="platform">Sequencing Platform:</label>
+            <select id="platform" name="platform" required>
+                <option value="illumina">Illumina</option>
+                <option value="pacbio">PacBio</option>
+                <option value="nanopore">Nanopore</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <!-- Additional Notes -->
+        <div class="form-section">
+            <h3>Additional Notes</h3>
+            <p>If there are any other details, comments, or considerations you would like to share regarding your project, please include them below.</p>
+            <label for="additional-notes">Additional Notes:</label>
+            <textarea id="additional-notes" name="additional-notes" rows="5"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
